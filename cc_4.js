@@ -37,4 +37,9 @@ class ElectricCar extends Car {
     set charge(value) {
         this._charge = value >= 0 ? (value <= 100 ? value : 100) : 0;
     }
+
+    chargeBattery(charge) {
+        this.charge = charge;
+        console.log(`Battery charge set to ${this.charge}%`);
+    }
 }
