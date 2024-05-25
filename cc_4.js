@@ -54,3 +54,9 @@ class ElectricCar extends Car {
 
     }
 }
+// Testing EV class
+let myTesla = new ElectricCar(120,23);
+myTesla.accelerate();
+myTesla.brake();
+myTesla.chargeBattery(100);
+myTesla.accelerate();
