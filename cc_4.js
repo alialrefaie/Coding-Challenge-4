@@ -44,10 +44,13 @@ class ElectricCar extends Car {
     }
 
     accelerate() {
-        if (this.speed > 0) 
+        if (this.charge > 0) {
             super.accelerate();
-        this.speed = 1;
-        console.log ("Insufficient battery charge to accelerate.");
+        this.charge -= 1;
+        console.log (`Elecric car accelerated: Speed is ${this.speed} km/h, Charge is ${this.charge}%`);
+        } else {
+            console.log("Insufficient battery charge to accelerate.");
+        }
 
     }
 }
