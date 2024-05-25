@@ -1,3 +1,4 @@
+// U72955273
 // Car class
 class Car {
     constructor(speed) {
@@ -55,8 +56,8 @@ class ElectricCar extends Car {
     }
 }
 // Testing EV class
-let myTesla = new ElectricCar(120,23);
-myTesla.accelerate();
-myTesla.brake();
-myTesla.chargeBattery(100);
-myTesla.accelerate();
+let myTesla = new ElectricCar(120,23); // Starting speed and charge
+myTesla.accelerate(); // Testing acceleration
+myTesla.brake(); // Testing braking
+myTesla.chargeBattery(100); // Recharge the battery to full
+myTesla.accelerate(); // Accelerate again to display charge decreasing
