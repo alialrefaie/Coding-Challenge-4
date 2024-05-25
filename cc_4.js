@@ -1,40 +1,40 @@
 // Car class
 class Car {
     constructor(speed) {
-        this.speed = speed;
+        this._speed = speed;
     }
     
     accelerate(amount = 20) {
-        this.speed = amount;
-        console.log(`Car accelerated to {this.speed} km/h`);
+        this.speed += amount;
+        console.log(`Car accelerated to ${this.speed} km/h`);
     }
 
     brake() {
-        this.speed = math(0, this.max - 20);
-        console.log (`Car braked to {this.speed} km/h`);
+        this.speed = Math.max(0, this.speed - 20);
+        console.log (`Car braked to ${this.speed} km/h`);
     }
 
     get speed() {
-        retun this.speed;
+        return this._speed;
     }
 
-    get speed(value) {
-        this.speed = value = 0 ? value ? 0;
+    set speed(value) {
+        this._speed = value >= 0 ? value : 0;
     }
 }
 
 // Extending Car class with ElectricCar
 class ElectricCar extends Car {
-    constructor (charge, speed) {
-        super(charge);
-        this.speed = speed;
+    constructor(speed, charge) {
+        super(speed);
+        this._charge = charge;
     }
 
-    get speed() {
-        return this.speed;
+    get charge() {
+        return this._charge;
     }
 
-    set speed(value) {
-        this.speed = value > 0 ? (value < 100 ? value > 100) : 0;
+    set charge(value) {
+        this._charge = value >= 0 ? (value <= 100 ? value : 100) : 0;
     }
 }
